@@ -63,3 +63,45 @@ function showResult(data) {
         resultDiv.style.display = "block";
     }
 }
+
+
+function copyToClipboard() {
+    const shortUrlElement = document.getElementById("shortUrl");
+
+    if (!shortUrlElement) {
+        console.error("Error: Element with id 'shortUrl' not found!");
+        return;
+    }
+
+    const shortUrl = shortUrlElement.href;
+
+    if (!shortUrl || shortUrl === "#") {
+        console.error("Error: No valid short URL found to copy!");
+        alert("No valid short URL to copy!");
+        return;
+    }
+
+    navigator.clipboard.writeText(shortUrl)
+        .then(() => {
+            showToast("Short URL copied to clipboard! ✅");
+        })
+        .catch(err => console.error("Error copying to clipboard: ", err));
+}
+
+// ✅ Function to show toast notification
+function showToast(message) {
+    const toast = document.createElement("div");
+    toast.textContent = message;
+    toast.className = "toast-message";
+    
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add("show"); // Show toast
+    }, 100); 
+
+    setTimeout(() => {
+        toast.classList.remove("show"); // Hide toast
+        setTimeout(() => document.body.removeChild(toast), 500);
+    }, 2500); // Auto-hide after 2.5s
+}

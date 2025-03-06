@@ -19,13 +19,14 @@
         
         <div class="result" id="result" style="display: none;">
             <p>Original URL: <span id="originalUrlDisplay"></span></p>
-            <p>Short URL: 
+            
+            <div class="shortened-url-box">
+                <p>Short URL:</p>
                 <a href="#" id="shortUrl" class="short-url" target="_blank"></a>
-                <!-- <button onclick="copyToClipboard()" class="copy-btn">Copy</button> -->
                 <button onclick="copyToClipboard()">Copy</button>
-
-            </p>
+            </div>
         </div>
+        
     </div>
 
     <!-- ✅ Ensure JavaScript is loaded last -->

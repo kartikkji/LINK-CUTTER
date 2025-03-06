@@ -1,88 +1,237 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background: linear-gradient(135deg, #000000, #1a1a2e);
+    color: #ffffff;
 }
 
+/* Glassmorphic Container */
 .container {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     width: 90%;
     max-width: 600px;
     text-align: center;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Headings */
 h1 {
-    color: #2d3436;
+    color: #ffffff;
     margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-shadow: 2px 2px 15px rgba(255, 255, 255, 0.4);
 }
 
 .tagline {
-    color: #636e72;
-    margin-bottom: 2rem;
+    color: #a9a9a9;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
+/* Input Section */
 .input-section {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
+/* Input Field */
 input {
     flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
     font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: 0.3s ease-in-out;
 }
 
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Button with Cool Gradient */
 button {
-    padding: 0.8rem 2rem;
-    background-color: #0984e3;
+    padding: 0.9rem 2rem;
+    background: linear-gradient(45deg, #ff0066, #6600ff);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
 }
 
 button:hover {
-    background-color: #0873c4;
+    background: linear-gradient(45deg, #6600ff, #ff0066);
+    transform: translateY(-2px);
 }
 
+button:active {
+    transform: scale(0.98);
+}
+
+/* Error Message */
 #errorMessage {
-    color: #e74c3c;
+    color: #ff4c4c;
     margin-bottom: 1rem;
-    padding: 0.5rem;
-    background-color: #f8d7da;
-    border-radius: 5px;
+    padding: 0.7rem;
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
 }
 
+/* Result Section */
 #resultSection {
     margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 5px;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
 }
 
+#resultSection:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Shortened URL Link */
 #shortenedUrl {
-    color: #0984e3;
+    color: #00ffff;
     text-decoration: none;
-    word-break: break-all;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+    transition: 0.3s ease-in-out;
 }
 
 #shortenedUrl:hover {
     text-decoration: underline;
+    color: #ffb6c1;
 }
 
+/* Copy Button */
+.copy-btn {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(45deg, #00ffcc, #0066ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.copy-btn:hover {
+    background: linear-gradient(45deg, #0066ff, #00ffcc);
+    transform: translateY(-2px);
+}
+
+/* Hide Elements Initially */
 .hidden {
     display: none;
 }
+/* Shortened URL Box */
+.shortened-url-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    word-break: break-word;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.shortened-url-box:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Shortened URL Link */
+.short-url {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.short-url:hover {
+    text-decoration: underline;
+    color: #ffb6c1;
+}
+
+/* Copy Button */
+button {
+    margin-top: 0.7rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(45deg, #00ffcc, #0066ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0066ff, #00ffcc);
+    transform: translateY(-2px);
+}
+
+/* 🔥 Toast Notification Style */
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toast-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
