@@ -1,5 +1,15 @@
 /* General Styles */
+/* Add this at the top of your CSS */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
+/* Modified body */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -10,8 +20,28 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, #000000, #1a1a2e);
     color: #ffffff;
+    position: relative;
 }
 
+/* Add this to your container */
+.container {
+    position: relative;
+    z-index: 1;
+    /* rest of your existing container styles */
+}
+
+/* Add these new styles for the graph effect */
+.graph-lines {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0;
+}
+
+/* Keep your existing particlesJS configuration but move it to a separate JS file */
 
 /* Glassmorphic Container */
 .container {
@@ -237,12 +267,3 @@ button:hover {
     transform: translateX(-50%) translateY(-10px);
 }
 
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 80 },
-        size: { value: 3 },
-        color: { value: "#ffffff" },
-        move: { speed: 1 },
-        line_linked: { enable: true, opacity: 0.2 }
-    }
-});
